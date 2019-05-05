@@ -35,11 +35,18 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function map()
     {
+        $this->mapRouteBindings();
+
         $this->mapApiRoutes();
 
         $this->mapWebRoutes();
 
         //
+    }
+
+    protected function mapRouteBindings()
+    {
+        require base_path('routes/bindings.php');
     }
 
     /**
